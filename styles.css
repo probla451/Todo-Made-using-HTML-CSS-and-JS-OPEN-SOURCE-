@@ -1,0 +1,178 @@
+/* Basic, fast-loading styles using the system font stack */
+:root {
+    color-scheme: light dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, system-ui, sans-serif;
+    background: canvas;
+    color: canvastext;
+}
+
+.app {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+.app__header {
+    display: grid;
+    gap: 12px;
+    align-items: center;
+}
+
+.app__header h1 {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+#new-todo-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+}
+
+#new-todo-input {
+    padding: 12px 14px;
+    border: 1px solid color-mix(in oklab, currentColor 16%, transparent);
+    border-radius: 8px;
+    background: Field;
+    color: FieldText;
+}
+
+#add-btn {
+    padding: 12px 14px;
+    border: 1px solid color-mix(in oklab, currentColor 16%, transparent);
+    background: AccentColor;
+    color: AccentColorText;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    filter: brightness(1.05);
+}
+
+.app__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0 6px;
+}
+
+.filters {
+    display: inline-flex;
+    gap: 4px;
+    border: 1px solid color-mix(in oklab, currentColor 16%, transparent);
+    border-radius: 999px;
+    padding: 2px;
+}
+
+.filter {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 8px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.filter.is-active {
+    background: color-mix(in oklab, currentColor 12%, transparent);
+}
+
+.linklike {
+    background: none;
+    border: none;
+    padding: 0;
+    color: LinkText;
+    cursor: pointer;
+}
+
+.linklike:hover {
+    text-decoration: underline;
+}
+
+.app__list {
+    margin-top: 8px;
+}
+
+#todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.todo-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid color-mix(in oklab, currentColor 16%, transparent);
+    border-radius: 10px;
+    background: color-mix(in oklab, canvas 92%, currentColor 8%);
+}
+
+.todo-item.completed {
+    opacity: 0.65;
+    text-decoration: line-through;
+}
+
+.todo-text {
+    outline: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 8px 0;
+    width: 100%;
+}
+
+.todo-text[contenteditable="true"] {
+    border-bottom: 1px dashed color-mix(in oklab, currentColor 30%, transparent);
+}
+
+.todo-actions {
+    display: inline-flex;
+    gap: 6px;
+}
+
+.icon-btn {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    background: color-mix(in oklab, currentColor 12%, transparent);
+}
+
+.app__footer {
+    margin-top: 12px;
+    color: color-mix(in oklab, currentColor 60%, transparent);
+}
+
+@media (max-width: 420px) {
+    #new-todo-form {
+        grid-template-columns: 1fr;
+    }
+}

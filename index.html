@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TODO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="app" id="app" aria-labelledby="app-title">
+        <header class="app__header">
+            <h1 id="app-title">Todo list </h1>
+            <form id="new-todo-form" autocomplete="off" aria-label="Add a new task">
+                <input id="new-todo-input" type="text" name="todo" placeholder="What needs to be done?"
+                    aria-label="New todo" required>
+                <button id="add-btn" type="submit" aria-label="Add todo">Add</button>
+            </form>
+        </header>
+
+        <section class="app__controls" aria-label="Filters and actions">
+            <div class="filters" role="tablist" aria-label="Filter tasks">
+                <button role="tab" aria-selected="true" data-filter="all" class="filter is-active">All</button>
+                <button role="tab" aria-selected="false" data-filter="active" class="filter">Active</button>
+                <button role="tab" aria-selected="false" data-filter="completed" class="filter">Completed</button>
+            </div>
+            <button id="clear-completed" class="linklike" aria-label="Clear completed tasks">Clear completed</button>
+        </section>
+
+        <section class="app__list" aria-live="polite" aria-label="Todo list">
+            <ul id="todo-list"></ul>
+        </section>
+
+        <footer class="app__footer">
+            <span id="items-left">0 items left</span>
+        </footer>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
